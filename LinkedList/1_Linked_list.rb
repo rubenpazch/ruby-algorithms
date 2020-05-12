@@ -13,14 +13,14 @@ class LinkedList
   attr_accessor :head, :tail
 
   def add(number)
-    new_node = Node.new()
+    new_node = Node.new
     new_node.value = number
-    new_node.next_node=nil
-    
+    new_node.next_node = nil
+
     if head.nil?
-      @head=new_node
-      @tail=new_node
-    else 
+      @head = new_node
+      @tail = new_node
+    else
       @tail.next_node = new_node
       @tail = new_node
     end
@@ -59,6 +59,7 @@ class LinkedList
     temp = head
     until temp.nil?
       return temp.value if index == i
+
       temp = temp.next_node
       i += 1
     end
