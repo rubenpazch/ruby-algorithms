@@ -24,15 +24,28 @@ class Queue
   end
 
   def remove
-    if tail.nil?
-      -1
+    removed = -1
+    if head.nil?
+      return -1
     else
+      if head.next_node.nil?
+        removed = head.value
+        @head = nil
+        @tail = nil
+        return removed
+      end  
+
       current = head
-      while current.next_node.nil?
-        p current
+      previous = head
+      until current.next_node.nil?
+        previous = current
         current = current.next_node
       end
+      removed = current.value
+      previous.next_node = nil
+      @tail = previous
     end
+    removed
   end
 end
 
@@ -40,22 +53,20 @@ queue = Queue.new
 
 queue.add(3)
 queue.add(5)
-queue.add(11)
-p queue
-queue.remove
-# puts queue.remove
+puts queue.remove
 # => 3
 
-# queue.add(2)
-# queue.add(7)
-# puts queue.remove
+queue.add(2)
+queue.add(7)
+puts queue.remove
 # => 5
 
-# puts queue.remove
+puts queue.remove
 # => 2
 
-# puts queue.remove
+puts queue.remove
 # => 7
 
-# puts queue.remove
+puts queue.remove
 # => -1
+
