@@ -1,6 +1,4 @@
 #!/bin/ruby
-# frozen_string_literal: true
-
 def sum_of_even_array(arr)
   counter = 0
   arr.each do |x|

@@ -10,26 +10,27 @@ end
 
 class Stack
   attr_accessor :head
+
   def push(number)
     new_node = Node.new
-    new_node.value  = number
+    new_node.value = number
     new_node.next_node = nil
-    
+
     if head.nil?
       @head = new_node
-    else 
+    else
       new_node.next_node = head
       @head = new_node
     end
   end
-  
+
   def pop
     value = nil
-    if head.nil? 
+    if head.nil?
       p 'empty'
     else
       value = head.value
-      temp  = head.next_node
+      temp = head.next_node
       @head = temp
     end
     value

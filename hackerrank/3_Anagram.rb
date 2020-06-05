@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 def anagram(s)
   len = s.length
   string_left = s[0..(len / 2) - 1]
@@ -10,9 +8,7 @@ def anagram(s)
   if len.even?
     hash_left.each do |k, v|
       if hash_right.key?(k)
-        if hash_left.fetch(k) > hash_right.fetch(k)
-          counter += v - hash_right.fetch(k)
-        end
+        counter += v - hash_right.fetch(k) if hash_left.fetch(k) > hash_right.fetch(k)
       else
         counter += v
        end

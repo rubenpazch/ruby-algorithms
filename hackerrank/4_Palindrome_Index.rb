@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 def palindromeIndex(s)
   i = 0
   j = s.length - 1

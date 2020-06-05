@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 def repeatedString(s, n) # abba, 14
   len = s.length # 4
   div = n / len # 3
