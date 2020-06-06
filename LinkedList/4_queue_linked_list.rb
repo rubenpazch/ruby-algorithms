@@ -33,7 +33,7 @@ class Queue
         @head = nil
         @tail = nil
         return removed
-      end  
+      end
 
       current = head
       previous = head
@@ -45,6 +45,7 @@ class Queue
       previous.next_node = nil
       @tail = previous
     end
+
     removed
   end
 end
@@ -69,4 +70,3 @@ puts queue.remove
 
 puts queue.remove
 # => -1
-
