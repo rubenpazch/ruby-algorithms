@@ -37,11 +37,11 @@ class Stack
   def min
     min = head.value
     current = head.next_node
-    
-    return min  if head.next_node.nil?
-    
+
+    return min if head.next_node.nil?
+
     min = current.value if current.value < min && head.next_node.next_node.nil?
-    
+
     min = current.value if min > current.value && current.next_node.nil?
 
     until current.next_node.nil?
