@@ -5,7 +5,7 @@ class Node
     @value = value
     @next_node = next_node
   end
-  end
+end
 
 class Stack
   attr_accessor :head
@@ -52,24 +52,22 @@ def balanced_brackets?(string)
   # your code here
   arr = string.chars
   stack = Stack.new
-  p arr
   arr.each do |item|
-    p stack
-    p item
+    
     if item == '(' || item == '[' || item == '{'
       stack.push(item)
-    else
+    else      
       top = stack.top()
-      if (top == '[' && item != ']') || (top == '(' && item != ')') || (top == '{' && item != '}')
-        stack.pop()
+      if (top == '[' && item == ']') || (top == '(' && item == ')') || (top == '{' && item == '}')
+        stack.pop
       end
-
     end
+    return false if (item == '}' || item == ')' || item == ']') && stack.nil? 
   end
   stack.empty?
 end
 
-puts balanced_brackets?('(hello)[world]')
+puts balanced_brackets?('(hello)[world]}')
 # => true
 
 # puts balanced_brackets?('([)]')
