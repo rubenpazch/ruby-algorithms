@@ -53,16 +53,13 @@ def balanced_brackets?(string)
   arr = string.chars
   stack = Stack.new
   arr.each do |item|
-    
     if item == '(' || item == '[' || item == '{'
       stack.push(item)
-    else      
+    else
       top = stack.top()
-      if (top == '[' && item == ']') || (top == '(' && item == ')') || (top == '{' && item == '}')
-        stack.pop
-      end
+      stack.pop if (top == '[' && item == ']') || (top == '(' && item == ')') || (top == '{' && item == '}')
     end
-    return false if (item == '}' || item == ')' || item == ']') && stack.nil? 
+    return false if (item == '}' || item == ')' || item == ']') && stack.nil?
   end
   stack.empty?
 end

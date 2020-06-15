@@ -2,17 +2,17 @@ class Node
   attr_accessor :value, :next_node
 
   def initialization(value, next_node = nil)
-    @values = value
+    @value = value
     @next_node = next_node
   end
 end
+
 class Stack
   attr_accessor :head
 
   def push(number)
     new_node = Node.new
     new_node.value = number
-    new_node.next_node = nil
 
     if head.nil?
       @head = new_node
@@ -25,7 +25,7 @@ class Stack
   def pop
     value = nil
     if head.nil?
-      p 'empty'
+      value
     else
       value = head.value
       temp = head.next_node
@@ -34,43 +34,60 @@ class Stack
     value
   end
 
-  def min
+  def empty?
+    if head.nil?
+      true
+    else
+      false
+    end
+  end
 
+  def top
     return nil if head.nil?
+    return head.value unless head.nil?
+  end
 
-    min = head.value
-
-    return min if head.next_node.nil?
-
+  def max
+    max = head.value
     current = head.next_node
 
-    min = current.value if current.value < min && head.next_node.next_node.nil?
+    return max if head.next_node.nil?
+
+    max = current.value if current.value > max && head.next_node.next_node.nil?
+    #max = current.value if current.value > max && current.next_node.nil?
 
     until current.next_node.nil?
-      min = current.value if current.value < min
+      max = current.value if current.value > max
       current = current.next_node
     end
-    min
+    max
   end
 end
 
 stack = Stack.new
 stack.push(3)
-
-# => 3
+puts stack.max
 stack.push(5)
-puts stack.min
+puts stack.max
 # => 3
 
 stack.pop
 stack.push(7)
-puts stack.min
+puts stack.max
 # => 3
 
 stack.push(2)
-puts stack.min
+puts stack.max
 # => 2
 
 stack.pop
-puts stack.min
+puts stack.max
 # => 3
+
+# def sliding_maximum(_k, array)
+#  array.each do |item|
+#  end
+# end
+
+# sliding_maximum(3, [1, 3, 5, 7, 9, 2])
+# => [5, 7, 9, 9]
