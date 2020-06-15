@@ -57,7 +57,7 @@ class Stack
     return next_temp.value if next_temp.value > head.value && head.next_node.next_node.nil?
 
     max = head.value
-    until next_temp.nil?
+    until next_temp.nil?      
       max = next_temp.value if next_temp.value > max
       next_temp = next_temp.next_node
     end
@@ -65,27 +65,27 @@ class Stack
   end
 end
 
-def sliding_maximum(_k, array)
-  i = 0
-  result = []
-  array.each do |_item|
-    slice_array = array.slice(i, _k)
-    p slice_array
-    break if _k > slice_array.length
+stack = Stack.new
+stack.push(9)
 
-    stack = Stack.new
+stack.push(3)
+#puts stack.max
+# => 5
 
-    slice_array.each do |slice|
-      stack.push(slice)
-    end
-    p stack
-    result.push(stack.max)
-    stack = nil
-    i += 1
-  end
-  result
-end
+#stack.pop
+stack.push(5)
+#puts stack.max
+# => 7
 
-#p sliding_maximum(3, [1, 3, 5, 7, 9, 2])
-p sliding_maximum(4, [9, 3, 5, 1, 7, 10])
-# => [9, 7, 10]
+stack.push(1)
+puts stack.max
+# => 7
+
+
+# def sliding_maximum(_k, array)
+#  array.each do |item|
+#  end
+# end
+
+# sliding_maximum(3, [1, 3, 5, 7, 9, 2])
+# => [5, 7, 9, 9]

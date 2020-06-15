@@ -35,16 +35,15 @@ class Stack
   end
 
   def min
-
     return nil if head.nil?
 
     min = head.value
 
-    return min if head.next_node.nil?
+    return head.value if head.next_node.nil?
 
     current = head.next_node
 
-    min = current.value if current.value < min && head.next_node.next_node.nil?
+    return current.value if current.value < min && head.next_node.next_node.nil?
 
     until current.next_node.nil?
       min = current.value if current.value < min
@@ -57,7 +56,6 @@ end
 stack = Stack.new
 stack.push(3)
 
-# => 3
 stack.push(5)
 puts stack.min
 # => 3
