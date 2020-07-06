@@ -86,6 +86,6 @@ def sliding_maximum(_k, array)
   result
 end
 
-#p sliding_maximum(3, [1, 3, 5, 7, 9, 2])
+# p sliding_maximum(3, [1, 3, 5, 7, 9, 2])
 p sliding_maximum(4, [9, 3, 5, 1, 7, 10])
 # => [9, 7, 10]
