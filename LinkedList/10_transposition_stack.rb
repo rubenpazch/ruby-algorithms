@@ -51,36 +51,11 @@ end
 def transpose(string)
   split_array = string.split
   full_string = ''
-  split_array.each do |item|
-    arr = item.chars
-    stack = Stack.new
-    arr.each do |element|
-      stack.push(element)
-    end
-    new_string = ''
-    p stack
-    until stack.empty?
-      last_node = stack.top
-      node = stack.pop
 
-      if node == 'n' && stack.top == 'g'
-        top = stack.pop
-        new_string = node + top + new_string
-        p new_string
-      elsif node == 'g' && stack.top == 'g'
-        top = stack.pop
-        new_string = new_string + node + top
-        p new_string
-      elsif node == 'g' && stack.top != 'n'
-        new_string += node
-        p new_string
-      else
-        new_string = node + new_string
-        p new_string
-      end
-    end
-    full_string = full_string + ' ' + new_string
+  split_array.each do |value|
+    p value
   end
+
   full_string
 end
 

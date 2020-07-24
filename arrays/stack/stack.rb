@@ -4,41 +4,40 @@ class Stack
     @data = Array.new(capacity)
     @top = -1
   end
-  def isEmpty?  
-    return @top == -1
+
+  def isEmpty?
+    @top == -1
   end
 
   def size
-    return @top + 1;
+    @top + 1
   end
 
-  def print 
-    for value in @data do 
-      if !value.nil?
-        puts value
-      end
-    end 
+  def print
+    @data.each do |value|
+      puts value unless value.nil?
+    end
   end
 
   def push(value)
     if size == @data.length
       p 'is full'
-    else 
-      @top = @top + 1;
+    else
+      @top += 1
       @data[@top] = value
     end
   end
 
-  def pop 
-    if isEmpty? 
+  def pop
+    if isEmpty?
       puts 'there is not elements'
-    else 
+    else
       topVal = @data[@top]
       @data[@top] = nil
-      @top = @top - 1 
-      return topVal
-    end 
-  end 
+      @top -= 1
+      topVal
+    end
+  end
 end
 
 stack = Stack.new(capacity: 50)
