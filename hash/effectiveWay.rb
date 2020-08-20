@@ -39,6 +39,6 @@
 #p h[1]
 #p h.values
 
-h = Hash.new { |hash, key| hash[key] = "Go Fish: #{key}" }
-
-p h
+#h = Hash.new { |hash, key| hash[key] = "Go Fish: #{key}" }
+#h["c"]
+#p h
