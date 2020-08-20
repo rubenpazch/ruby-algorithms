@@ -1,4 +1,4 @@
-h = {apple: 100, orange: 200}
+#h = {apple: 100, orange: 200}
 
 #puts h.value?(100)
 #puts h.key?(:orange)
@@ -25,7 +25,20 @@ h = {apple: 100, orange: 200}
 
 #grades = Hash.new(0)
 #puts grades
-
 #grades = {"Timmy Doe" => 8}
-grades.default = 0
-puts grades
+#grades.default = 0
+#p grades[:r]
+
+#h = Hash.new("new fish");
+#h["a"] = 100
+#h["b"] = 200
+#
+#p h["a"]
+#p h["b"]
+#p h["c"]
+#p h[1]
+#p h.values
+
+h = Hash.new { |hash, key| hash[key] = "Go Fish: #{key}" }
+
+p h
