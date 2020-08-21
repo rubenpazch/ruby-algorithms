@@ -42,3 +42,8 @@
 #h = Hash.new { |hash, key| hash[key] = "Go Fish: #{key}" }
 #h["c"]
 #p h
+
+a = { x: 2, a: 1 , b: 1}
+b = { b: 2, x: 1 }
+
+p a.keys
