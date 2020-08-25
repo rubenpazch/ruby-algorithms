@@ -1,16 +1,16 @@
 $N = 8
 
-def isSafe(x, y, arr)
+def safe?(x, y, arr)
   (x >= 0 && x < $N && y >= 0 && y < $N && arr[x][y] == -1)
 end
 
-def printArray(arr)
+def print_array(arr)
   arr.each do |x|
     p x
   end
 end
 
-def solveKT
+def solve_kt
   rows = 8
   cols = 8
   grid = Array.new(rows) { Array.new(cols) }
@@ -26,7 +26,7 @@ def solveKT
 
   grid[0][0] = 0
 
-  if !solveKTUtil(0, 0, 1, grid, xMove, yMove)
+  if !solve_ktutil(0, 0, 1, grid, xMove, yMove)
     puts 'solutions not exists'
     return false
   else
@@ -35,8 +35,8 @@ def solveKT
   true
 end
 
-def solveKTUtil(x, y, movei, arr, xMove, yMove)
-  k = 0
+def solve_ktutil(x, y, movei, arr, xMove, yMove)
+  
   next_x = 0
   next_y = 0
 
@@ -46,9 +46,9 @@ def solveKTUtil(x, y, movei, arr, xMove, yMove)
     next_x = x + xMove[k]
     next_y = y + yMove[k]
 
-    if isSafe(next_x, next_y, arr)
+    if safe?(next_x, next_y, arr)
       arr[next_x][next_y] = movei
-      if solveKTUtil(next_x, next_y, movei + 1, arr, xMove, yMove)
+      if solve_ktutil(next_x, next_y, movei + 1, arr, xMove, yMove)
         return true
       else
         arr[next_x][next_y] = -1
@@ -59,4 +59,4 @@ def solveKTUtil(x, y, movei, arr, xMove, yMove)
   end
 end
 
-solveKT
+solve_kt()
