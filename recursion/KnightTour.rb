@@ -30,7 +30,7 @@ def solve_kt
     puts 'solutions not exists'
     return false
   else
-    printArray(grid)
+    print_array(grid)
   end
   true
 end
@@ -45,20 +45,19 @@ def solve_ktutil(x, y, movei, arr, xMove, yMove)
   (0..7).each do |k|
     next_x = x + xMove[k]
     next_y = y + yMove[k]
-    puts "#{k} -> #{next_x} -  #{next_y} - #{movei}"
-    puts safe?(next_x, next_y, arr)
+    #puts "#{k} -> #{next_x} -  #{next_y} - #{movei}"
+    #puts safe?(next_x, next_y, arr)
     if safe?(next_x, next_y, arr)
       arr[next_x][next_y] = movei
-      print_array(arr) 
+      #print_array(arr) 
       if solve_ktutil(next_x, next_y, movei + 1, arr, xMove, yMove)
         return true
       else
         arr[next_x][next_y] = -1
       end
     end
-
-    return false
   end
+  return false
 end
 
 solve_kt()
