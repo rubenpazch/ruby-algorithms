@@ -1,5 +1,8 @@
 $N = 8
 
+# A utility function to check if i,j are
+# valid indexes for N*N chessboard
+
 def safe?(x, y, arr)
   (x >= 0 && x < $N && y >= 0 && y < $N && arr[x][y] == -1)
 end
@@ -36,7 +39,6 @@ def solve_kt
 end
 
 def solve_ktutil(x, y, movei, arr, xMove, yMove)
-  
   next_x = 0
   next_y = 0
 
@@ -45,19 +47,19 @@ def solve_ktutil(x, y, movei, arr, xMove, yMove)
   (0..7).each do |k|
     next_x = x + xMove[k]
     next_y = y + yMove[k]
-    #puts "#{k} -> #{next_x} -  #{next_y} - #{movei}"
-    #puts safe?(next_x, next_y, arr)
-    if safe?(next_x, next_y, arr)
-      arr[next_x][next_y] = movei
-      #print_array(arr) 
-      if solve_ktutil(next_x, next_y, movei + 1, arr, xMove, yMove)
-        return true
-      else
-        arr[next_x][next_y] = -1
-      end
+    # puts "#{k} -> #{next_x} -  #{next_y} - #{movei}"
+    # puts safe?(next_x, next_y, arr)
+    next unless safe?(next_x, next_y, arr)
+
+    arr[next_x][next_y] = movei
+    # print_array(arr)
+    if solve_ktutil(next_x, next_y, movei + 1, arr, xMove, yMove)
+      return true
+    else
+      arr[next_x][next_y] = -1
     end
   end
-  return false
+  false
 end
 
-solve_kt()
+solve_kt
