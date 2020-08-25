@@ -42,12 +42,14 @@ def solve_ktutil(x, y, movei, arr, xMove, yMove)
 
   return true if movei == $N * $N
 
-  (0..8).each do |k|
+  (0..7).each do |k|
     next_x = x + xMove[k]
     next_y = y + yMove[k]
-
+    puts "#{k} -> #{next_x} -  #{next_y} - #{movei}"
+    puts safe?(next_x, next_y, arr)
     if safe?(next_x, next_y, arr)
       arr[next_x][next_y] = movei
+      print_array(arr) 
       if solve_ktutil(next_x, next_y, movei + 1, arr, xMove, yMove)
         return true
       else
