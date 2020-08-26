@@ -15,3 +15,6 @@ p ar2 - ar1
 # str1.each_char{|x| x - }
 
 p str1 <=> str2
+
+
+puts 3/2

@@ -8,6 +8,14 @@
 # 1  -> 2 y 3 -> 4 y 5
 # result = 0
 
+
+# 1 -> 2 y 3 -> 4 y 5 -> 6 y 7 -> 8
+# 1 -> 2 y 3 -> 4 y 5 -> 6 y 7 
+# 1 -> 2 y 3 -> 4 y 5 -> 6         1  2 3 4 5
+# 1 -> 2 y 3 -> 4 y 5     
+# 1 -> 2 y 3     -1 0  
+# 1
+
 =begin
 
   end si es par   6 / 2 = 3
@@ -63,6 +71,52 @@ def pageCount(n, p)
   
   #puts "start by #{page_to_star}"
   
+end
+
+fptr = File.open(ENV['OUTPUT_PATH'], 'w')
+
+n = gets.to_i
+
+p = gets.to_i
+
+result = pageCount n, p
+
+fptr.write result
+fptr.write "\n"
+
+fptr.close()
+
+
+
+
+#!/bin/ruby
+
+#
+# Complete the pageCount function below.
+#
+def pageCount(n, p)
+  half = n / 2 
+  return 0 if half == p
+  return 0 if n == p
+     
+  if p > half         
+      i = n # 2
+      counter = 0 # 1
+      while i > half do  # 2 > 1             
+          counter = counter +1 unless i.odd? # 2            
+          return counter/ 2 if p == i  # 2 == 2 
+          i = i -1 
+      end
+  else
+      i = 1 
+      counter = 0
+      while i < half do             
+          counter = counter +1 unless i.odd?
+          return counter/ 2 if p == i
+          i = i + 1 
+      end
+  
+  end 
 end
 
 fptr = File.open(ENV['OUTPUT_PATH'], 'w')
