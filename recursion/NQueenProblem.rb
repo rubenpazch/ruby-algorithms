@@ -60,7 +60,7 @@ def solve_nq()
   true
 end
 
-solve_nq()
+solve_nq
 
 # arr = [[1,1,0,0],[0,1,1,0],[0,0,1,1],[0,0,0,1]]
 # p arr
