@@ -131,3 +131,48 @@ fptr.write result
 fptr.write "\n"
 
 fptr.close()
+
+
+
+#!/bin/ruby
+
+#
+# Complete the pageCount function below.
+#
+def pageCount(n, p)
+  half = n / 2 
+  return 0 if half == p
+  return 0 if n == p
+     
+  if p > half         
+      i = n
+      counter = 0
+      while i > half do  
+          return counter if p == i  
+          counter = counter +1 if i.even?             
+          i = i -1 
+      end
+  else
+      i = 1 
+      counter = 0
+      while i < half do                         
+          counter = counter + 1 if i.even?            
+          return counter if p == i
+          i = i + 1 
+      end
+  
+  end 
+end
+
+fptr = File.open(ENV['OUTPUT_PATH'], 'w')
+
+n = gets.to_i
+
+p = gets.to_i
+
+result = pageCount n, p
+
+fptr.write result
+fptr.write "\n"
+
+fptr.close()
