@@ -6,7 +6,7 @@
 #   2  4  12  45
 #   5  12 44  111 2 7
 
-#!/bin/ruby
+# !/bin/ruby
 
 #
 # Complete the getMoneySpent function below.
@@ -14,22 +14,18 @@
 def getMoneySpent(keyboards, drives, b)
   arrK = keyboards.sort.reverse
   arrD = drives.sort.reverse
-  
-  if keyboards.length == 1 &&  drives.length == 1 && (keyboards.sum + drives.sum) > b
-      return -1
-  end
-  
-  max = 0    
+
+  return -1 if keyboards.length == 1 && drives.length == 1 && (keyboards.sum + drives.sum) > b
+
+  max = 0
   arrK.each do |k|
-      arrD.each do |d|
-          sum = k + d            
-          if sum <= b &&  sum > max
-              max = sum
-          end            
-      end
+    arrD.each do |d|
+      sum = k + d
+      max = sum if sum <= b && sum > max
+    end
   end
-  
-  return max
+
+  max
 end
 
 fptr = File.open(ENV['OUTPUT_PATH'], 'w')
@@ -55,39 +51,31 @@ moneySpent = getMoneySpent keyboards, drives, b
 fptr.write moneySpent
 fptr.write "\n"
 
-fptr.close()
+fptr.close
 
-
-
-
-
-
-#!/bin/ruby
+# !/bin/ruby
 
 #
 # Complete the getMoneySpent function below.
 #
 def getMoneySpent(keyboards, drives, b)
-        
-    total = -1    
-    keyboards.each do |k|
-        drives.each do |d|
-            sum = k + d            
-            if sum <= b 
-                total = max(total, sum)
-            end            
-        end
+  total = -1
+  keyboards.each do |k|
+    drives.each do |d|
+      sum = k + d
+      total = max(total, sum) if sum <= b
     end
-    
-    return total
+  end
+
+  total
 end
 
-def max(x, y )
-    if x > y 
-        return x 
-    else 
-        return y
-    end
+def max(x, y)
+  if x > y
+    x
+  else
+    y
+  end
 end
 
 fptr = File.open(ENV['OUTPUT_PATH'], 'w')
@@ -113,4 +101,4 @@ moneySpent = getMoneySpent keyboards, drives, b
 fptr.write moneySpent
 fptr.write "\n"
 
-fptr.close()
+fptr.close

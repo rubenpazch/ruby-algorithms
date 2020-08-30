@@ -16,5 +16,4 @@ p ar2 - ar1
 
 p str1 <=> str2
 
-
-puts 3/2
+puts 3 / 2
