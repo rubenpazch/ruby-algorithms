@@ -118,3 +118,54 @@ fptr.write "\n"
 
 fptr.close()
 =end
+
+
+
+#!/bin/ruby
+
+require 'json'
+require 'stringio'
+
+#
+# Complete the 'pickingNumbers' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER_ARRAY a as parameter.
+#
+
+def pickingNumbers(a)
+    # Write your code here
+    arr = Array.new(101,0.to_i)    
+    max = 0 
+    result = 0
+  
+    a.each do |m|
+       arr[m] = arr[m] + 1
+    end
+    t = 1
+    
+    
+    arr.each do |n|            
+      unless arr[t].nil?         
+        result =  [max, (n + arr[t]) ].max
+        max = result
+        t = t+1
+      end
+      
+    end
+  
+    return result
+end
+
+fptr = File.open(ENV['OUTPUT_PATH'], 'w')
+
+n = gets.strip.to_i
+
+a = gets.rstrip.split.map(&:to_i)
+
+result = pickingNumbers a
+
+fptr.write result
+fptr.write "\n"
+
+fptr.close()
