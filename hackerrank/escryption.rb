@@ -1,3 +1,41 @@
+a >  1X1
+
+a
+
+
+ab --> 1X2
+
+a   = a a
+a
+
+abc --> 2X2
+
+ab  = ac b 
+c
+
+abcd --> 2X2
+
+ab  = ac db
+cd
+
+abcde --> 2X3
+
+abc = ad be c
+de 
+
+
+abcdef --> 2X3
+
+abc = ad be cf
+def
+
+abcdefg --> 3X3
+
+abc --> adg be cf
+def
+g
+
+
 #!/bin/ruby
 
 require 'json'
