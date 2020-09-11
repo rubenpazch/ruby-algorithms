@@ -118,3 +118,78 @@ fptr.write result
 fptr.write "\n"
 
 fptr.close()
+
+
+
+
+
+#!/bin/ruby
+
+require 'json'
+require 'stringio'
+
+# Complete the encryption function below.
+def encryption(s)
+  len_string = s.length  
+  arr = [1,2,3,4,5,6,7,8,9]
+  
+  square = Math.sqrt(len_string)
+  if arr.include?(square)
+    rows = square.to_i
+    cols = square.to_i
+  else
+    rows = square.to_i + 1
+    cols = square.to_i
+  end
+  
+  if len_string> rows*cols
+    cols = cols + 1
+  end   
+  
+  arr_cols = Array.new()  
+  string_array = s.split('')  
+  
+  i=0   
+  while i < cols     
+    arr_row = Array.new()
+    j= 0
+    
+    while j < rows             
+      arr_row.push(string_array[0])
+      string_array.shift            
+      j += 1      
+    end    
+    arr_cols.push(arr_row)
+    j = 0
+    i += 1
+  end
+  
+  new_string=""
+  r = m = 0   
+  while r < rows
+    s = 0    
+    while s < cols
+      if !arr_cols[s][r].nil?
+        new_string += arr_cols[s][r]
+      end
+      s += 1
+      m += 1
+    end    
+    new_string += ' '    
+    s = 0
+    r += 1
+  end
+  new_string
+  
+end
+
+fptr = File.open(ENV['OUTPUT_PATH'], 'w')
+
+s = gets.to_s.rstrip
+
+result = encryption s
+
+fptr.write result
+fptr.write "\n"
+
+fptr.close()
