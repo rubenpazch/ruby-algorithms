@@ -27,28 +27,37 @@
 #cantidadACambiar = 10
 #cantidadACambiar = 1
 #cantidadACambiar = 0
-cantidadACambiar = 1123
+#cantidadACambiar = 1123
+cantidadACambiar = 15
 
 
 def totalBilletesMonedas (retirar)
-    billete100 = 100
+    billete200 = 200.0
 
-    arr = [10,1]
+    arr = [100.0,50.0,20.0,10.0,5.0,2.0,1.0,0.5,0.2,0.1]
     
-    minimo = 0
-    division = retirar/billete100
-    residuo = retirar%billete100 
-    minimo = minimo + division 
+    minimo = 0.0
 
-    if residuo == 0 
+    if retirar > billete200
+        division = retirar/billete200
+        residuo = retirar%billete200 
+        minimo = minimo + division 
+    else 
+        residuo = retirar
+    end
+
+
+    if residuo == 0.0 
         return minimo
     end
     
     i = 0
-    while  residuo != 0 
-        division = residuo/arr[i]
-        residuo = residuo%arr[i]
-        minimo  = minimo + division
+    while  residuo != 0.0 
+        if residuo >= arr[i]
+            division = residuo/arr[i]
+            residuo = residuo%arr[i]
+            minimo  = minimo + division
+        end
         i = i + 1
     end
 
