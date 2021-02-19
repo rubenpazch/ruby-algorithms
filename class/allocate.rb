@@ -3,7 +3,6 @@ klass = Class.new do
     @initialized = true
   end
 
-  def initialized? 
     @initialized || false
   end
 end
