@@ -17,3 +17,4 @@ end
 
 doctor1 = Doctor.new("PEdro")
 puts doctor1.name
+puts doctor1.instance_variables.inspect
