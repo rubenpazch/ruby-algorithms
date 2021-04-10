@@ -1,3 +1,4 @@
+
 class Invoker
     def on_start=(command)
         @on_start = command
