@@ -1,5 +1,5 @@
-class Animal 
-  def name 
+class Animal
+  def name
     puts 'animal'
   end
 end
@@ -12,7 +12,6 @@ end
 
 cat = Cat.new
 cat.name
-
 
 def puts(*)
   super

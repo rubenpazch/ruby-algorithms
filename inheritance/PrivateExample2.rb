@@ -1,6 +1,6 @@
 class Person
   def speak
-    puts "Hey douth!"
+    puts 'Hey douth!'
   end
 
   def whisper_louder
@@ -8,13 +8,13 @@ class Person
   end
 
   private
+
   def whisper
-    puts "His name is not  doputhc"
+    puts 'His name is not  doputhc'
   end
 end
 
-
-you= Person.new
+you = Person.new
 you.speak
 
 a_hater = Person.new

@@ -4,7 +4,7 @@ class Component
   end
 end
 
-class ConcreteComponent < Component 
+class ConcreteComponent < Component
   def operation
     'ConcreteComponent'
   end
@@ -17,7 +17,7 @@ class Decorator < Component
     @component = component
   end
 
-  def operation 
+  def operation
     @component.operation
   end
 end
@@ -38,7 +38,7 @@ def client_code(component)
   print "result: #{component.operation}"
 end
 
-simple=ConcreteComponent.new
+simple = ConcreteComponent.new
 puts 'Client: I\'ve got a simple component:'
 client_code(simple)
 puts "\n\n"

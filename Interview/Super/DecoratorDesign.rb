@@ -1,25 +1,24 @@
 require 'rest-client'
 
-data = RestClient.get("www.rubyguides.com")
+data = RestClient.get('www.rubyguides.com')
 
 module LogHTTPRequest
-    def get(url)
-        puts "Sending request for #{url}"
-        super
-    end
+  def get(url)
+    puts "Sending request for #{url}"
+    super
+  end
 end
 
-
 class HTTPClient
-    def initialize(client = RestClient)
-        @client = client
-    end
+  def initialize(client = RestClient)
+    @client = client
+  end
 
-    def get(*args)
-        @client.get(*args)
-    end
+  def get(*args)
+    @client.get(*args)
+  end
 end
 
 client = HTTPClient.new
 client.extend(LogHTTPRequest)
-client.get("rubyguides.com")
+client.get('rubyguides.com')

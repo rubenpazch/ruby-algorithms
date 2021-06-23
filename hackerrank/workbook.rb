@@ -4,18 +4,18 @@ require 'json'
 require 'stringio'
 
 # Complete the workbook function below.
-def workbook(n, k, arr)
+def workbook(_n, k, arr)
   pageNumber = 1
   counter = 0
-  
-  (0..arr.length-1).each do |i|
+
+  (0..arr.length - 1).each do |i|
     (1..arr[i]).each do |j|
-      counter +=1 if j == pageNumber
-      pageNumber += 1 if j == arr[i] || j%k == 0
+      counter += 1 if j == pageNumber
+      pageNumber += 1 if j == arr[i] || j % k == 0
     end
   end
-  
-  return counter
+
+  counter
 end
 
 fptr = File.open(ENV['OUTPUT_PATH'], 'w')
@@ -33,4 +33,4 @@ result = workbook n, k, arr
 fptr.write result
 fptr.write "\n"
 
-fptr.close()
+fptr.close

@@ -11,7 +11,7 @@ def anagram(s)
         counter += v - hash_right.fetch(k) if hash_left.fetch(k) > hash_right.fetch(k)
       else
         counter += v
-       end
+      end
     end
   else
     return -1

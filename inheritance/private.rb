@@ -4,6 +4,7 @@ class Animal
   end
 
   protected
+
   def method_1
     puts "Hi I am a #{self.class}"
   end
@@ -17,7 +18,7 @@ end
 
 class Cat < Animal
   def my_method
-    self.method_1
+    method_1
   end
 end
 

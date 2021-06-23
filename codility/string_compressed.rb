@@ -11,13 +11,13 @@ def solution(s, _k)
   counter = 0
   compressed_string = ''
   while i <= len
-    if current_string != arr[i]
+    if current_string == arr[i]
+      counter += 1
+    else
       current_string = counter.to_s + current_string
       compressed_string += current_string
       current_string = arr[i]
       counter = 1
-    else
-      counter += 1
     end
     i += 1
   end

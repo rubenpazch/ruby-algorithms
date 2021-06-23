@@ -1,14 +1,17 @@
-class Fixnum 
-  def seconds 
+class Integer
+  def seconds
     self
   end
-  def minutes 
+
+  def minutes
     self * 60
   end
-  def hours 
+
+  def hours
     self * 60 * 60
   end
-  def days 
+
+  def days
     self * 60 * 60 * 24
   end
 end

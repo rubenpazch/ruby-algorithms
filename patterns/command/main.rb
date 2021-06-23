@@ -1,7 +1,7 @@
-require_relative './invoker.rb'
-require_relative './receiver.rb'
-require_relative './simple_command.rb'
-require_relative './complex_command.rb'
+require_relative './invoker'
+require_relative './receiver'
+require_relative './simple_command'
+require_relative './complex_command'
 
 invoker = Invoker.new
 invoker.on_start = SimpleCommand.new('say hi!')

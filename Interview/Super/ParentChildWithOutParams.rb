@@ -1,13 +1,13 @@
 class Parent
-    def say
-        p "Soy Tu Padre"
-    end
+  def say
+    p 'Soy Tu Padre'
+  end
 end
 
 class Child < Parent
-    def say(message)
-        super()
-    end
+  def say(_message)
+    super()
+  end
 end
 
-Child.new.say("Hi!!!!")
+Child.new.say('Hi!!!!')

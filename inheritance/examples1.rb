@@ -1,16 +1,16 @@
 class ParentClass
   def method1
-    puts "hello from method 1 in the parent class"
+    puts 'hello from method 1 in the parent class'
   end
 
   def method2
-    puts "hello from method2 in the parent class"
+    puts 'hello from method2 in the parent class'
   end
 end
 
 class ChildClass < ParentClass
   def method2
-    puts "hello from method 2 in child class"
+    puts 'hello from method 2 in child class'
   end
 end
 

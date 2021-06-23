@@ -29,11 +29,11 @@ def solve_kt
 
   grid[0][0] = 0
 
-  if !solve_ktutil(0, 0, 1, grid, xMove, yMove)
+  if solve_ktutil(0, 0, 1, grid, xMove, yMove)
+    print_array(grid)
+  else
     puts 'solutions not exists'
     return false
-  else
-    print_array(grid)
   end
   true
 end

@@ -1,4 +1,5 @@
-def repeatedString(s, n) # abba, 14
+# abba, 14
+def repeatedString(s, n)
   len = s.length # 4
   div = n / len # 3
   dif = n - (div * len)

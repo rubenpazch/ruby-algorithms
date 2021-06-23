@@ -7,21 +7,19 @@ require 'stringio'
 def fairRations(b)
   i = 0
   counter = 0
-  while i < b.length    
-    
-    if b[i+1].nil? && b[i].odd?
-      return 'NO'
-    end
-    
-    if b[i].odd? && !b[i+1].nil?
+  while i < b.length
+
+    return 'NO' if b[i + 1].nil? && b[i].odd?
+
+    if b[i].odd? && !b[i + 1].nil?
       b[i] += 1
-      b[i+1] += 1
+      b[i + 1] += 1
       counter += 2
-    end   
-    
-    i += 1 
+    end
+
+    i += 1
   end
-  
+
   counter
 end
 
@@ -36,4 +34,4 @@ result = fairRations B
 fptr.write result
 fptr.write "\n"
 
-fptr.close()
+fptr.close
