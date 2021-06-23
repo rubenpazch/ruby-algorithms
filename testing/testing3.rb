@@ -1,4 +1,3 @@
-puts 'home9'
 puts 'home3'
 puts 'home3'
 puts 'home3'
