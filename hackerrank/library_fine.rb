@@ -97,7 +97,7 @@ def libraryFine(d1, m1, y1, d2, m2, y2)
 end
 
 def daysToPay(d1, d2)
-  if (d1 - d2) > 0
+  if (d1 - d2).positive?
     ((d1 - d2) * 15).abs
   else
     0
@@ -140,13 +140,13 @@ def yearToPay(d1, m1, y1, d2, m2, y2)
   end
 end
 
-p '45500 == ' + libraryFine(1, 7, 2019, 1, 8, 2014).to_s
-p '50000 == ' + libraryFine(1, 8, 2019, 1, 8, 2014).to_s
-p '40500 == ' + libraryFine(1, 9, 2019, 1, 8, 2014).to_s
+p "45500 == #{libraryFine(1, 7, 2019, 1, 8, 2014)}"
+p "50000 == #{libraryFine(1, 8, 2019, 1, 8, 2014)}"
+p "40500 == #{libraryFine(1, 9, 2019, 1, 8, 2014)}"
 
-p '5500 == ' + libraryFine(1, 7, 2019, 1, 8, 2018).to_s
-p '10000 == ' + libraryFine(1, 8, 2019, 1, 8, 2018).to_s
-p '10500 == ' + libraryFine(1, 9, 2019, 1, 8, 2018).to_s
+p "5500 == #{libraryFine(1, 7, 2019, 1, 8, 2018)}"
+p "10000 == #{libraryFine(1, 8, 2019, 1, 8, 2018)}"
+p "10500 == #{libraryFine(1, 9, 2019, 1, 8, 2018)}"
 
 # !/bin/ruby
 
@@ -170,7 +170,7 @@ def libraryFine(d1, m1, y1, d2, m2, y2)
 end
 
 def daysToPay(d1, d2)
-  if (d1 - d2) > 0
+  if (d1 - d2).positive?
     ((d1 - d2) * 15).abs
   else
     0

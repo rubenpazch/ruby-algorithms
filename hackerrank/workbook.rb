@@ -11,7 +11,7 @@ def workbook(_n, k, arr)
   (0..arr.length - 1).each do |i|
     (1..arr[i]).each do |j|
       counter += 1 if j == pageNumber
-      pageNumber += 1 if j == arr[i] || j % k == 0
+      pageNumber += 1 if j == arr[i] || (j % k).zero?
     end
   end
 
@@ -26,7 +26,7 @@ n = nk[0].to_i
 
 k = nk[1].to_i
 
-arr = gets.rstrip.split(' ').map(&:to_i)
+arr = gets.rstrip.split.map(&:to_i)
 
 result = workbook n, k, arr
 

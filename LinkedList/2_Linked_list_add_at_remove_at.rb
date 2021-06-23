@@ -38,7 +38,7 @@ class LinkedList
   end
 
   def remove(index)
-    return if index < 0
+    return if index.negative?
 
     if index.zero?
       temp = head.next_node
@@ -66,7 +66,7 @@ class LinkedList
     new_node.value = number
     new_node.next_node = nil
 
-    return if index < 0
+    return if index.negative?
 
     if index.zero?
       new_node.next_node = head

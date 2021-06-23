@@ -27,7 +27,7 @@ fptr = File.open(ENV['OUTPUT_PATH'], 'w')
 
 N = gets.to_i
 
-B = gets.rstrip.split(' ').map(&:to_i)
+B = gets.rstrip.split.map(&:to_i)
 
 result = fairRations B
 

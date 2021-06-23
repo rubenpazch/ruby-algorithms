@@ -5,7 +5,7 @@ def solution(s, _k)
   # write your code in Ruby 2.2
 
   len = s.length
-  arr = s.split('')
+  arr = s.chars
   i = 0
   current_string = arr[0]
   counter = 0

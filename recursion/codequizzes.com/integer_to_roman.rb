@@ -20,7 +20,7 @@ def integer_to_roman(roman_mapping, number, result = '')
   roman_mapping.each_key do |divisor|
     quotient, modulus = number.divmod(divisor)
     result << roman_mapping[divisor] * quotient
-    return integer_to_roman(roman_mapping, modulus, result) if quotient > 0
+    return integer_to_roman(roman_mapping, modulus, result) if quotient.positive?
   end
 end
 

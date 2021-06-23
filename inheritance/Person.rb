@@ -8,7 +8,7 @@ end
 
 class Doctor < Person
   def name
-    'Dr.' + super
+    "Dr.#{super}"
   end
 end
 

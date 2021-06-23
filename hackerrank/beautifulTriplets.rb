@@ -40,7 +40,7 @@ n = nd[0].to_i
 
 d = nd[1].to_i
 
-arr = gets.rstrip.split(' ').map(&:to_i)
+arr = gets.rstrip.split.map(&:to_i)
 
 result = beautifulTriplets d, arr
 

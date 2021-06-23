@@ -5,16 +5,9 @@ class Animal
 end
 
 class Cat < Animal
-  def name
-    super
-  end
 end
 
 cat = Cat.new
 cat.name
-
-def puts(*)
-  super
-end
 
 puts 1, 2, 3

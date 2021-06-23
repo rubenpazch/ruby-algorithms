@@ -10,7 +10,7 @@ hash = {}
 a.each { |x| hash.store(x, 0) }
 
 a.each do |x|
-  hash[x] = hash[x] + 1 if hash.has_key?(x)
+  hash[x] = hash[x] + 1 if hash.key?(x)
 end
 
 hashFrecuency = {}
@@ -18,7 +18,7 @@ i = 0
 
 filter_array.each do |y|
   filter_array.each do |z|
-    hashFrecuency.store(i, [y, z]) if (y - z).abs == 1 || (y - z).abs == 0
+    hashFrecuency.store(i, [y, z]) if (y - z).abs == 1 || (y - z).abs.zero?
   end
   i += 1
 end

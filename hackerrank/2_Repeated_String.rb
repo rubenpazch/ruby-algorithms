@@ -7,7 +7,7 @@ def repeatedString(s, n)
   array = s.chars
   totalA = array.select { |item| item == 'a' }
 
-  if dif == 0
+  if dif.zero?
     totalA.length * div
   else
     modString = s[0, dif]

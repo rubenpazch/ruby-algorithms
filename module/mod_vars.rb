@@ -16,6 +16,6 @@ module Foo
 end
 
 include Foo # mix in the Foo module
-puts (x)
-puts (bar)
-puts (no_bar)
+puts(x)
+puts(bar)
+puts(no_bar)

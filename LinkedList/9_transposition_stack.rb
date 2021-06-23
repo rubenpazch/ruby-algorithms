@@ -35,11 +35,7 @@ class Stack
   end
 
   def empty?
-    if head.nil?
-      true
-    else
-      false
-    end
+    head.nil?
   end
 
   def top
@@ -79,7 +75,7 @@ def transpose(string)
         p new_string
       end
     end
-    full_string = full_string + ' ' + new_string
+    full_string = "#{full_string} #{new_string}"
   end
   full_string
 end
