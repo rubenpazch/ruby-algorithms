@@ -1,1 +1,1 @@
-puts 'child2'
+puts 'homefriend'
