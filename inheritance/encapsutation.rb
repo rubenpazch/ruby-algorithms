@@ -4,7 +4,7 @@ class Person
   end
 
   def name
-    @first_name + ' ' + @last_name
+    "#{@first_name} #{@last_name}"
   end
 
   private
@@ -20,9 +20,9 @@ class Person
   end
 
   def set_last_name(name)
-    @last_name= name
+    @last_name = name
   end
 end
 
-p = Person.new("Fred Bloggs")
+p = Person.new('Fred Bloggs')
 puts p.name

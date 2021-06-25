@@ -6,6 +6,7 @@ class Node
     @next_node = next_node
   end
 end
+
 class Stack
   attr_accessor :head
 

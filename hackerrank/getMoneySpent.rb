@@ -38,9 +38,9 @@ n = bnm[1].to_i
 
 m = bnm[2].to_i
 
-keyboards = gets.rstrip.split(' ').map(&:to_i)
+keyboards = gets.rstrip.split.map(&:to_i)
 
-drives = gets.rstrip.split(' ').map(&:to_i)
+drives = gets.rstrip.split.map(&:to_i)
 
 #
 # The maximum amount of money she can spend on a keyboard and USB drive, or -1 if she can't purchase both items
@@ -88,9 +88,9 @@ n = bnm[1].to_i
 
 m = bnm[2].to_i
 
-keyboards = gets.rstrip.split(' ').map(&:to_i)
+keyboards = gets.rstrip.split.map(&:to_i)
 
-drives = gets.rstrip.split(' ').map(&:to_i)
+drives = gets.rstrip.split.map(&:to_i)
 
 #
 # The maximum amount of money she can spend on a keyboard and USB drive, or -1 if she can't purchase both items

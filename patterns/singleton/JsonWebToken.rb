@@ -1,23 +1,22 @@
 class JsonWebToken
-    @instance = new
+  @instance = new
 
-    private_class_method :new
+  private_class_method :new
 
-    def self.instance
-        @instance
+  class << self
+    attr_reader :instance
     end
 
-    #class << self 
-        def encode
-            puts 'encode'
-        end
+  # class << self
+  def encode
+    puts 'encode'
+  end
 
-        def decode
-            puts 'decode'
-        end
-    #end
+  def decode
+    puts 'decode'
+  end
+  # end
 end
-
 
 hh = JsonWebToken.instance
 p hh.object_id

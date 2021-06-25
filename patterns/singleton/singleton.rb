@@ -1,21 +1,20 @@
 class Singleton
-    @instance = new
+  @instance = new
 
-    private_class_method :new
+  private_class_method :new
 
-    def self.instance
-        @instance
+  class << self
+    attr_reader :instance
     end
 
-    def some_business_logic
-    end
+  def some_business_logic; end
 end
 
 s1 = Singleton.instance
 s2 = Singleton.instance
 
 if s1.equal?(s2)
-    print 'singleton works'
-else 
-    print 'singleton'
+  print 'singleton works'
+else
+  print 'singleton'
 end

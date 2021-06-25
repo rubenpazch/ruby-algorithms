@@ -1,7 +1,5 @@
 class Stack
-  attr_accessor :capacity
-  attr_accessor :data
-  attr_accessor :top
+  attr_accessor :capacity, :data, :top
 
   def initialize(capacity = 1000)
     @capacity = capacity
