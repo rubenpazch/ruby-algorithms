@@ -1,1 +1,1 @@
-puts 'home33'
+puts 'homefriend'
