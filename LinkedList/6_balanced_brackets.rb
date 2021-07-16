@@ -35,11 +35,7 @@ class Stack
   end
 
   def empty?
-    if head.nil?
-      true
-    else
-      false
-    end
+    head.nil?
   end
 
   def top
@@ -53,13 +49,13 @@ def balanced_brackets?(string)
   arr = string.chars
   stack = Stack.new
   arr.each do |item|
-    if item == '(' || item == '[' || item == '{'
+    if ['(', '[', '{'].include?(item)
       stack.push(item)
     else
       top = stack.top()
       stack.pop if (top == '[' && item == ']') || (top == '(' && item == ')') || (top == '{' && item == '}')
     end
-    return false if (item == '}' || item == ')' || item == ']') && stack.nil?
+    return false if ['}', ')', ']'].include?(item) && stack.nil?
   end
   stack.empty?
 end

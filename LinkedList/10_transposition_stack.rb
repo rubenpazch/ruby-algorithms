@@ -35,11 +35,7 @@ class Stack
   end
 
   def empty?
-    if head.nil?
-      true
-    else
-      false
-    end
+    head.nil?
   end
 
   def top

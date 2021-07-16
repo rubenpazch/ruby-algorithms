@@ -17,7 +17,7 @@ def fibonacci_numbers(number)
       arr[i] = arr[i - 1] + arr[i - 2]
     else
       break
-     end
+    end
     i += 1
   end
   arr
